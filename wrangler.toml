@@ -1,0 +1,20 @@
+name = "mail2tg"
+main = "build/index.js"
+compatibility_date = "2026-11-08"
+
+[build]
+command = "cargo install -q \"worker-build@^0.8\" && worker-build --release --panic-unwind"
+
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
+
+[observability.traces]
+enabled = false
+head_sampling_rate = 1
+persist = true
+
+[observability.issue_detection]
+enabled = false
